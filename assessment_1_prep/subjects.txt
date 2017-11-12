@@ -1,0 +1,20 @@
+SORTS (with and without procs)
+merge sort 
+bubble sort 
+quicksort 
+
+
+SEARCH (with and without procs)
+binary search 
+
+
+RECURSION
+Factorials
+
+ENUMERABLES
+
+
+memory references - creating new arrays and hashes
+
+
+
