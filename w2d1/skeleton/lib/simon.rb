@@ -1,3 +1,4 @@
+require 'byebug'
 class Simon
   COLORS = %w(red blue green yellow)
 
@@ -20,31 +21,39 @@ class Simon
   def take_turn
     show_sequence
     require_sequence
+    
     unless game_over
       round_success_message
       @sequence_length+=1
-      add_random_color
     end
   end
 
   def show_sequence
     add_random_color
-    print @seq
-    print '\n'
+    puts
+    print "The sequence is #{@seq}"
+    puts
+    sleep 1
+    system("clear")
   end
 
   def require_sequence
     print "#{COLORS} \n"
-    puts "Enter a color:"
+    puts "Enter sequence, seperated by columns"
     input = gets.chomp
-    valid_input?(input)
+    input.include?(",") ? sequence_input = input.delete(" ").split(",") : sequence_input = [input.delete(" ")]
+    sequence_input.each do |color|
+      valid_input?(color)
+    end
+    @game_over = true if !round_success?(sequence_input)
   rescue
-
+    puts "This input failed!"
     retry
   end
 
   def valid_input?(input)
     raise "Not valid input! Try again" unless COLORS.include?(input)
+    true
   end
 
 
@@ -53,12 +62,16 @@ class Simon
     @seq << COLORS[rand(4)]
   end
 
+  def round_success?(input)
+    input == @seq
+  end 
+  
   def round_success_message
     puts "Great job bruh, totes keep it going!"
   end
 
   def game_over_message
-    puts "Hey you freakin lost, try again you mo freaker"
+    puts "Hey you freakin lost, try again"
   end
 
   def reset_game

@@ -28,31 +28,16 @@ end
 
 class Array
   def deep_dup
-    return self.dup unless self.any? {|el| el.is_a?(Array)}
-    
-    self.map {|el| el.is_a?(Array) ? el.deep_dup : el}
+
   end
 end
 
 def fibs_iter(n)
-  fibs = [0,1]
-  return [] if n == 0
-  return fibs[0..n-1] if n <=2
-  i = 1
-  while i < n 
-    fibs << fibs[i-1]+fibs[i]
-    i+=1
-  end 
-  fibs 
+
 end
 
 def fibs_rec(n)
-  if n<=2
-    [0,1].take(n)
-  else 
-    fibs = fibs_rec(n-1)
-    fibs << fibs[-2] + fibs[-1]
-  end 
+
 end
 
 class Array
@@ -82,15 +67,34 @@ def bsearch(nums, target)
 end
 
 class Array
-  def merge_sort
-
+  def merge_sort(&prc)
+    prc ||= Proc.new {|x,y| x<=>y}
+    return self if self.length == 1
+    half_pos = self.length/2
+    
+    left = self.take(half_pos)
+    right = self.drop(half_pos)
+    
+    merge(left.merge_sort(&prc), right.merge_sort(&prc), &prc)
   end
 
-  def merge(left, right)
+  def merge(left, right, &prc)
+    arr = []
+    while !left.empty? && !right.empty?
+      case prc.call(left.first, right.first)
+      when -1
+        arr << left.shift
+      else
+        arr << right.shift
+      end 
+    end
+    arr + left + right
 
   end 
   
 end
+
+
 
 def make_change(target, coins = [25, 10, 5, 1])
   
