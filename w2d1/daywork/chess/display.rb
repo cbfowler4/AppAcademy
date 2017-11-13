@@ -32,7 +32,7 @@ class Display
     background = nil
     background = :light_blue if [row_idx, col_idx] == @cursor.cursor_pos
     piece.icon.to_s.colorize(:color => color, :background => background)
-  end00
+  end
 
   def get_cursor_input
     loop do
