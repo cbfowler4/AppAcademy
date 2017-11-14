@@ -11,8 +11,13 @@ class Game
 
   def take_turn
     display.render
-    start_pos, end_pos = display.get_move
-    board.move_piece(start_pos, end_pos)
+    begin
+      start_pos, end_pos = display.get_move
+      board.move_piece(start_pos, end_pos)
+    rescue InvalidMoveError => error
+      puts error.message
+      retry
+    end
   end
 
 end

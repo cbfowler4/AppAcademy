@@ -28,7 +28,7 @@ class Display
   end
 
   def colorize_space(piece, row_idx, col_idx)
-    color = piece.white ? :blue : :red
+    color = piece.color == :black ? :blue : :red
     background = nil
     background = :light_blue if [row_idx, col_idx] == @cursor.cursor_pos
     piece.icon.to_s.colorize(:color => color, :background => background)
