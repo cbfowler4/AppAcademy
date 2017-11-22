@@ -1,0 +1,55 @@
+#!/usr/bin/env ruby
+
+def get_short_url
+puts ("Type in the shortened URL")
+print ">"
+ShortenedUrl.find_by(short_url: gets.chomp)
+end
+
+
+def get_input
+puts "What do you want to do?"
+puts "0. Create shortened URL"
+puts "1. Visit shortened URL"
+print ">"
+gets.chomp
+end
+
+puts "Input your email:"
+print ">"
+
+email = gets.chomp
+
+current_user = User.find_by(email: email)
+unless current_user
+  current_user = User.create!(email: email)
+end
+puts
+
+
+command = get_input
+
+until(["0","1"].include?(command))
+  puts "Do that again"
+  command = get_input
+end
+
+if command == "0"
+  puts ("Type in your long url")
+  print (">")
+
+  long_url = gets.chomp
+  short_url = ShortenedUrl.random_code(current_user, long_url)
+  puts
+  puts "Short url is: #{short_url.short_url}"
+  puts "Peace."
+else
+  shortened_url = get_short_url
+  until(shortened_url)
+    shortened_url = get_short_url
+  end
+  puts
+  puts "Launching #{shortened_url.long_url} ..."
+  puts "Goodbye"
+  system("launchy #{shortened_url.long_url}")
+end
