@@ -1,0 +1,43 @@
+
+
+<form class="" action= <%=action%> method="post">
+  
+  <% if edit %>
+    <input type="hidden" name = "_method" value="patch">
+  <% end %>
+  
+  <input type="text" name="cat[name]" value="<%= kitty.name %>"><br>
+  <input type="radio" name="cat[sex]" value="m" <%= "checked" if kitty.sex == "m"%> >Male<br>
+  <input type="radio" name="cat[sex]" value="f" <%= "checked" if kitty.sex == "f"%>>Female<br>
+  
+  <select class="" name="cat[color]">
+    
+    <% if kitty.color.nil?%>
+      <option disabled selected="selected"> -- select a color -- </option> 
+    <% else %>
+      <option disabled > -- select a color -- </option> 
+    <% end %>
+    
+    <% Cat.colors.each do |color| %>
+      <% if kitty.color == color %>
+        <option value=<%=color%> selected="selected"><%=color.capitalize%> </option>
+      <% else %>
+        <option value=<%=color%> ><%=color.capitalize%> </option>
+      <% end %>
+    <% end %>
+        
+  </select>
+  <br> 
+  <input type = "date" name = "cat[birth_date]" value="<%=kitty.birth_date %>"> birth date <br> 
+  text description 
+  <textarea name = "cat[description]"><%=kitty.description %></textarea>
+  <br>
+  <input type = "submit" value = "<%=submit%>" > 
+  
+</form>
+
+<!-- 
+#action 
+#input values whether to preselect 
+#submit text needs to be different 
+#hidden  -->

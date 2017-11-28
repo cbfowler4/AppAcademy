@@ -1,0 +1,10 @@
+
+<ul>
+  <% @cats.each do |cat| %>
+    <li> <%=cat.name%>   
+      <form action = <%=cat_url(cat.id)%> method = 'get'> 
+        <input type = "submit" value = "show cat"> 
+      </form> 
+    </li>
+  <% end %>
+</ul>
