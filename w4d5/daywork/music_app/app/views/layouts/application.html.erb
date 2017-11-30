@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MusicApp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <header>
+    <% if current_user %>
+      <h1> <%= current_user.username %> </h1>
+    <% end %>
+    <%= render "helper_views/log_button", user: current_user %>
+  </header>
+  <body>
+    <%= yield %>
+  </body>
+</html>
