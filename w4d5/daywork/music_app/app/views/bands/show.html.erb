@@ -1,0 +1,20 @@
+<section class="page-content">
+  <h1><%=@band.name%></h1>
+
+  <h2>Albums</h2>
+  <ul>
+    <% @albums.each do |album| %>
+      <li><a href="<%= album_url(album.id)%>"><%=album.title%></a></li>
+    <% end %>
+  </ul>
+  
+  <form action="<%= new_album_url %>" method="get">
+    <input class="submit-button" type="submit" value="New album">
+  </form>
+  
+  <form action="<%= edit_band_url(params[:id]) %>" method="get">
+    <input class="submit-button" type="submit" value="Edit band">
+  </form>
+  
+  <a href="<%= bands_url%>">Back to Bands</a>
+</section>

@@ -1,0 +1,18 @@
+<section class="page-content">
+  <h1> <%= action_text %> </h1>
+  <form action="<%= action_url %>" method="post">
+    <%= edit_text %>
+    <%= form_auth %>
+    <label>Band Name
+      <input type="text" name="band[name]" value="<%= previous_value %>">
+      <input class="submit-button" type="submit" value="<%=submit_button_text%>">
+    </label>
+  </form>
+  <% if previous_value %>
+    <form action="<%= band_url %>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <%= form_auth %>
+      <input class="submit-button" type="submit" value="Delete band">
+    </form>
+  <% end %>
+</section>

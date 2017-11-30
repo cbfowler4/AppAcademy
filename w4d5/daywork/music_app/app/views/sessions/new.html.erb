@@ -1,12 +1,14 @@
-<h1>Log In!</h1>
+<section class="page-content">
+  <h1>Log In!</h1>
 
-<form action="<%=session_url%>" method="post">
-  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
-  <label>Username
-  <input type="text" name="user[username]" value="">
-  </label>
-  <label>Password
-  <input type="password" name="user[password]" value="">
-  </label>
-  <input type="submit" value="Login">
-</form>
+  <form action="<%=session_url%>" method="post">
+    <%= form_auth %>
+    <label>Username
+    <input type="text" name="user[username]" value="">
+    </label>
+    <label>Password
+    <input type="password" name="user[password]" value="">
+    </label>
+    <input class="submit-button" type="submit" value="Login">
+  </form>
+</section>

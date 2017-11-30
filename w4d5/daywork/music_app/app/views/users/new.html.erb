@@ -1,12 +1,17 @@
-<h1>Sign Up!</h1>
+<section class="page-content">
+  <h1>Sign Up!</h1>
 
-<form action="<%=users_url%>" method="post">
-  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
-  <label>Username
-  <input type="text" name="user[username]" value="">
-  </label>
-  <label>Password
-  <input type="password" name="user[password]" value="">
-  </label>
-  <input type="submit" value="Sign Up">
-</form>
+  <form action="<%=users_url%>" method="post">
+    <%= form_auth %>
+    <label>Name
+    <input type="text" name="user[name]" value="">
+    </label>
+    <label>Email
+    <input type="text" name="user[email]" value="">
+    </label>
+    <label>Password
+    <input type="password" name="user[password]" value="">
+    </label>
+    <input class="submit-button" type="submit" value="Sign Up">
+  </form>
+</section>

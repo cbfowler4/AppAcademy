@@ -1,0 +1,13 @@
+<section class="page-content">
+  <h1>Bands</h1>
+  
+  <ul>
+    <% @bands.each do |band| %>
+      <li><a href="<%= band_url(band.id)%>"><%=band.name%></a></li>
+    <% end %> 
+  </ul>
+  
+  <form action="<%= new_band_url %>" method="get">
+    <input class="submit-button" type="submit" value="New Band">
+  </form>
+</section>

@@ -8,13 +8,25 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+<body>
   <header>
-    <% if current_user %>
-      <h1> <%= current_user.username %> </h1>
-    <% end %>
-    <%= render "helper_views/log_button", user: current_user %>
+    <div class="logo">
+      <img src="<%= asset_path "music-logo-design-1024x860.jpg"%>" alt="Picture"/>
+      <h1>Amplify</h1>
+    </div>
+    <div class="welcome">
+      <% if current_user %>
+        <h2> Welcome <%= current_user.email %>! 
+      <% end %>
+          <%= render "helper_views/log_button", user: current_user %>
+        </h2>
+      <%= render plain: flash[:errors] %>
+    </div>
   </header>
-  <body>
+  <content>
     <%= yield %>
-  </body>
+  </content>
+</body>
+  
+  <footer>Amplify: Rock on</footer>
 </html>

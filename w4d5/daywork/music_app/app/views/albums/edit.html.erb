@@ -1,0 +1,18 @@
+<% action_text = "Edit album" %>
+<% action_url = albums_url %>
+<% edit_text = "<input type=\"hidden\" name=\"_method\" value=\"patch\">".html_safe %>
+<% album_band = @album.band %>
+<% album_title = @album.title %>
+<% album_year = @album.year %>
+<% studio_bool = @album.studio %>
+<% submit_button_text = "Edit" %>
+
+<%= render "form", 
+ action_text: action_text,
+ action_url: action_url,
+ edit_text: edit_text,
+ album_band: album_band,
+ album_title: album_title,
+ album_year: album_year,
+ studio_bool: studio_bool,
+ submit_button_text: submit_button_text %>

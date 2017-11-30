@@ -1,0 +1,13 @@
+<% action_text = "Edit a band" %>
+<% action_url = band_url %>
+<% previous_value = @band.name if @band %>
+<% submit_button_text = "Edit band" %>
+<% edit_text = "<input type=\"hidden\" name=\"_method\" value=\"patch\">".html_safe %>
+
+<%= render "form",
+ action_url: action_url,
+ action_text: action_text,
+ previous_value: previous_value,
+ submit_button_text: submit_button_text,
+ edit_text: edit_text%>
+ 

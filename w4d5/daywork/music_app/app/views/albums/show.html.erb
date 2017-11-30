@@ -1,0 +1,19 @@
+
+<section class="page-content">
+  <h1><%= @album.title %></h1>
+  <table>
+    <tr>
+      <td>Band</td>
+      <td>Year</td>
+      <td>Studio</td>
+    </tr>
+    <tr>
+      <td><%= @album.band.name %></td>
+      <td><%= @album.year %></td>
+      <td><%= @album.studio %></td>
+    </tr>
+  </table>
+  <a href="<%= band_url(@album.band_id)%>">Back to <%=@album.band.name%></a>
+  <a href="<%= bands_url%>">Back to Bands</a>
+</section>
+

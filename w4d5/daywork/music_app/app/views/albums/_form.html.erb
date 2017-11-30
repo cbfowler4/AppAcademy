@@ -1,0 +1,37 @@
+<section class="page-content">
+  <h1> <%= action_text%> </h1>
+
+  <form action="<%= action_url %>" method="post">
+    <%= form_auth %>
+    <%= edit_text %>
+    
+    <label>Band Name
+      <select name="album[band]">
+        <option <%= "checked" if album_band.nil? %> disabled >-- select band -- </option>
+        <% @bands.each do |band| %>
+          <option value="<%=band.name%>" <%= "checked" if album_band == band.name %>><%=band.name%></option>
+        <% end %>
+      </select>
+    </label>
+    <br>
+    
+    <label>Title
+      <input type="text" name="album[title]" value="<%= album_title%>">
+    </label>
+    <br>
+    
+    <label>Release Year
+      <input type="text" name="album[year]" value="<%=album_year%>">
+    </label>
+    <br>
+    
+    <label>Studio Album
+      <input type="radio" name="album[studio]" value="true" <%= "checked" if studio_bool == true%>>True 
+      <input type="radio" name="album[studio]" value="false" <%= "checked" if studio_bool == false%>>False
+    </label>
+    <br>
+    
+    <input class="submit-button" type="submit" value="<%= submit_button_text %>">
+  </form>
+</section>
+

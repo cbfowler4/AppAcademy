@@ -13,3 +13,96 @@
  *= require_tree .
  *= require_self
  */
+ 
+ html {
+   height: 100%;
+   width: 100%;
+   font-family: "Futura", sans-serif;
+   font-style: normal;
+ }
+ 
+header {
+  background-color: #F8B304;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-height: 100px;
+}
+
+.logo {
+  display: flex;
+  height: 100px;
+  width: 140px;
+}
+
+.logo img {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  margin-right: -10%;
+}
+
+.logo h1 {
+  display: inline-block;
+}
+
+header form {
+  display: inline-block;
+}
+
+ul {
+  list-style-type: none;
+  font-size: 25px;
+}
+body {
+  flex-direction: column;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  background-color: #EDECDD;
+}
+
+content {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.page-content {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.page-content h1 {
+  text-align: center;
+  font-size: 45pt;
+  margin: 0 10px
+}
+
+footer {
+  display: block;
+  background-color: #F8B304;
+  min-height: 100px;
+}
+a {
+  color: black;
+}
+a:hover {
+  color: #E87909;
+}
+
+table {
+  border: 1px solid black;
+  border-spacing: 15px;
+}
+
+.submit-button{
+  transition-duration: 0.4s;
+  background-color: black;
+  color: white;
+  height: 25px;
+  font-size: 12pt;
+}
