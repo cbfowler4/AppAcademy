@@ -1,0 +1,93 @@
+#thirds {
+  display: flex;
+  
+  h3 {
+    font-weight: bold;
+    font-size: 16px;
+  }
+  h2 {
+    text-transform: uppercase;
+    font-weight: normal;
+  }
+  h1 {
+    text-align: center;
+  }
+  
+  label {
+    display: flex;
+    margin: 8px 0;
+  }
+}
+.main-article {
+  font-style: italic;
+  font-size: 22px;
+  font-weight: bold;
+}
+.author {
+  color: silver;
+}
+.left-col {
+  width: 20%;
+}
+
+.center-col {
+  width: 45%;
+  iframe {
+    width: 100%;
+    min-width: 200px;
+    min-height: 400px;
+  }
+}
+
+#thirds section, article{
+  margin-left: 5px;
+}
+.right-col {
+  width: 34.5%;
+}
+
+#third-col {
+  display: flex;
+  
+  article {
+    flex: 1;
+  }
+}
+
+
+#third-col ul li {
+  font-weight: bold;
+  list-style: inside;
+  font-size: 12px;
+}
+
+.not-important {
+  font-size: 10px;
+  color: silver;
+  text-align: center;
+  margin: 8px 0;
+}
+
+label > input[type="text"] {
+  color: silver;
+  border: 1px solid #999a9e;
+  width: 100%;
+  padding: 2px;
+  font-size: 10px;
+}
+
+label > input[type="submit"]{
+  border-radius: 2px;
+  background-color: steelblue;
+  font-size: 9px;
+  padding: 5px;
+  color: white;
+  font-weight: bold;
+}
+
+@media all and (max-width: 400px) {
+  #thirds {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+}
