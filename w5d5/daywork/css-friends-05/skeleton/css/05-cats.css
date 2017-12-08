@@ -1,0 +1,36 @@
+/* PHASE 5: Cats */
+
+.content-header {
+  height: 200px;
+  background-image: url("https://raw.githubusercontent.com/appacademy/curriculum/master/html-css/micro-projects/css-friends/docs/images/cats.jpg?token=AYcDdGBA9z4eW8uzYQug2t8RlQ3HO9i_ks5aM9grwA%3D%3D");
+  width: 100%;
+  background-size: cover;
+  color: white;
+  line-height: 1
+  
+}
+
+.content-header h1 {
+  font-size: 36px;
+  position: absolute;
+  top: 170px;
+  left: 264.7px;
+  text-shadow: 2px 2px 2px black;
+  font-weight: 300;
+}
+
+.content-header button {
+  position: absolute;
+  background-color: ghostwhite;
+  color: black;
+  top: 175px;
+  right: 50px;
+  padding: 10px 20px;
+  border: 1px solid black;
+  font-weight: 600;
+  
+}
+
+.content-header button:hover{
+  background-color: lightgray;
+}
