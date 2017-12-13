@@ -1,0 +1,11 @@
+html {
+  background-color: hotpink; 
+}
+
+* {
+  font-family: sans-serif;
+}
+
+marquee {
+  font-size: 100px;
+}
