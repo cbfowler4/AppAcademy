@@ -1,5 +1,6 @@
-html, body {
+html, body, ul, li, img, div, main, nav {
 	margin: 0;
 	padding: 0;
 	border: 0;
+  list-style-type: none;
 }
